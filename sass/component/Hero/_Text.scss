@@ -1,0 +1,50 @@
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+@mixin Text() {
+  .hero-text {
+    width: 50%;
+    h1 {
+      font-family: "Poppins-Bold", sans-serif;
+      font-size: calculateToMobile(60);
+      padding-bottom: calculateToRem(55);
+    }
+    p {
+      font-family: "Poppins-Regular", sans-serif;
+      font-size: calculateToMobile(18);
+      padding-bottom: calculateToRem(66);
+    }
+    button.cta {
+      font-family: "Poppins-Bold", sans-serif;
+      font-size: calculateToMobile(24);
+      padding: calculateToRem(15) calculateToRem(44);
+      border: none;
+      outline: none;
+      border-radius: calculateToRem(10);
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+  @include Desktop();
+}
+@mixin Desktop() {
+  @media (min-width: 1024px) {
+    .hero-text {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h1 {
+        font-size: calculateToRem(60);
+      }
+      p {
+        font-size: calculateToRem(18);
+      }
+      button.cta {
+        font-size: calculateToRem(24);
+        width: calculateToRem(213);
+        height: calculateToRem(48);
+        padding: 0;
+      }
+    }
+  }
+}

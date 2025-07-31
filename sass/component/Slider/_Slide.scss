@@ -1,0 +1,25 @@
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+@mixin Slide() {
+  .slider-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  @include Desktop();
+}
+
+@mixin Desktop() {
+  @media (min-width: 1024px) {
+    .slider-images {
+      width: 100%;
+      display: flex;
+      gap: calculateToRem(28);
+      flex-direction: row;
+      flex-wrap: nowrap;
+      .slider-image {
+        width: 50% !important;
+      }
+    }
+  }
+}

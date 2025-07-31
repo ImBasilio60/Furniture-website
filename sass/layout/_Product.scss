@@ -1,0 +1,12 @@
+@use "../component/Product/title" as *;
+@use "../component/Product/card" as *;
+@use "../abstract/function" as *;
+
+section.product-section {
+  width: 100%;
+  padding: calculateToRem(0) calculateToRem(237) calculateToRem(0)
+    calculateToRem(237);
+  margin-bottom: calculateToRem(122);
+  @include Title();
+  @include Card();
+}

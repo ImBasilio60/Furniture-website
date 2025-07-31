@@ -1,0 +1,11 @@
+@use "../abstract/function" as *;
+@use "../abstract/variable" as *;
+@use "../component/Slider/Text" as *;
+@use "../component/Slider/Slide" as *;
+
+.slider {
+  padding: 0 calculateToRem(237);
+  margin-bottom: calculateToRem(135);
+  @include Text();
+  @include Slide();
+}

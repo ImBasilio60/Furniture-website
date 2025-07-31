@@ -1,0 +1,32 @@
+@use "../../abstract/variable" as *;
+@use "../../abstract/function" as *;
+@mixin Nav-mobile() {
+  .navbar {
+    font-size: calculateToMobile(18);
+    position: relative;
+    .icons,
+    .nav-links {
+      display: none;
+    }
+    .nav-links.show {
+      display: block;
+      position: absolute;
+      top: 125%;
+      right: 0;
+      width: 25%;
+      background-color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      li {
+        margin-bottom: calculateToRem(40);
+        width: 100%;
+        text-align: justify;
+      }
+    }
+    .toggle-button {
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+    }
+  }
+}

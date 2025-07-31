@@ -1,0 +1,31 @@
+main.scss
+@use "./" as *;
+
+layout
+@use "../" as *;
+@use "../abstract/function" as *;
+@use "../abstract/variable" as *;
+
+component
+@use "../../" as *;
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+
+/*
+   font de la maquette
+   18px -> 1592px
+
+  ?  -> 320px
+  (320 * 18) / 1592 = 3,618090452261307 -> 4px
+
+  ?  -> 1024px
+  (1024 * 18) / 1592 = 11,57788944723618 -> 12px
+
+  ?  -> 1920px
+  (1920 * 18) / 1592 = 21,70854271356784 -> 22px
+
+  10,24px -> 1vw
+  12px    -> 1.171875vw
+
+  clamp(4px, 1.171875vw, 22px);
+*/

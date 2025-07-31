@@ -1,0 +1,58 @@
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+@mixin Mobile() {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  div {
+    width: calc(100% / 3);
+    text-align: center;
+    h1 {
+      font-size: calculateToMobile(20.4);
+      color: #2d3436;
+      span {
+        font-size: calculateToRem(10.4);
+      }
+    }
+    p {
+      margin: calculateToRem(24) 0;
+      line-height: calculateToMobile(28);
+    }
+    p,
+    a {
+      font-size: calculateToMobile(14);
+      font-family: "Montserrat", sans-serif;
+      color: #64696a;
+    }
+  }
+  div:first-child {
+    width: 100%;
+    margin-bottom: calculateToRem(30);
+  }
+}
+@mixin Desktop() {
+  @media (min-width: 1024px) {
+    footer {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      div {
+        width: auto;
+        margin-left: calculateToRem(79);
+        text-align: left;
+        h1 {
+          font-size: calculateToRem(20.4);
+          span {
+            font-size: calculateToRem(10.4);
+          }
+        }
+        p {
+          line-height: calculateToRem(28);
+        }
+        p,
+        a {
+          font-size: calculateToRem(14);
+        }
+      }
+    }
+  }
+}

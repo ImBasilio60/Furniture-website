@@ -1,0 +1,41 @@
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+@mixin Title() {
+  .product-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-size: calculateToMobile(30);
+      font-family: "Poppins-SemiBold", sans-serif;
+      color: #2d3436;
+      margin-bottom: calculateToRem(11);
+    }
+    p {
+      font-size: calculateToMobile(18);
+      font-family: "Montserrat-Regular", sans-serif;
+      margin-bottom: calculateToRem(32);
+      color: #a3a3a3;
+    }
+    hr {
+      width: calculateToRem(64);
+      margin-bottom: calculateToRem(48);
+    }
+  }
+  @include Desktop();
+}
+@mixin Desktop() {
+  @media (min-width: 1024px) {
+    .product-title {
+      h1 {
+        font-size: calculateToRem(30);
+      }
+
+      p {
+        font-size: calculateToRem(18);
+      }
+    }
+  }
+}

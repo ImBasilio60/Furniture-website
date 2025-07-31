@@ -1,0 +1,12 @@
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+@mixin Image() {
+  .hero-image {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .hero-image {
+      display: block;
+    }
+  }
+}

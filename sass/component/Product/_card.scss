@@ -1,0 +1,120 @@
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+@mixin Card() {
+  .product-cards {
+    display: flex;
+    gap: calculateToRem(26);
+    .product-card {
+      position: relative;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+      .sale {
+        width: calculateToRem(67);
+        height: calculateToRem(26);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: calculateToRem(10);
+        right: calculateToRem(10);
+        background: $primary-color;
+        position: absolute;
+      }
+      border-radius: calculateToRem(10);
+      background-color: #fff;
+      .product-image {
+        margin-bottom: calculateToRem(20);
+      }
+      .rating,
+      h4 {
+        margin-left: calculateToRem(21);
+      }
+      .rating {
+        margin-bottom: calculateToRem(19);
+        color: #a3a3a3;
+        i {
+          color: #efefef;
+          transition: all ease 0.1s;
+          cursor: pointer;
+        }
+        i:hover {
+          color: gold;
+        }
+      }
+      h4 {
+        margin-bottom: calculateToRem(21);
+        font-family: "Poppins-Medium", sans-serif;
+      }
+      .price {
+        margin-left: calculateToRem(16);
+        margin-bottom: calculateToRem(16);
+        .old-price {
+          text-decoration: underline;
+          font-family: "Poppins-Regular", sans-serif;
+          color: #a3a3a3;
+        }
+        .new-price {
+          font-family: "Poppins-SemiBold", sans-serif;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  @include Phone();
+  @include Tablet();
+  @include Desktop();
+}
+@mixin Phone() {
+  .product-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: calculateToRem(50);
+    .product-card {
+      width: 100%;
+      .sale {
+        font-size: calculateToMobile(18);
+      }
+      img {
+        width: 100%;
+      }
+      .rating {
+        font-size: calculateToMobile(18);
+      }
+      h4 {
+        font-size: calculateToMobile(18);
+      }
+      .price {
+        font-size: calculateToMobile(18);
+      }
+    }
+  }
+}
+@mixin Tablet() {
+  @media (min-width: 768px) {
+    .product-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+@mixin Desktop() {
+  @media (min-width: 1024px) {
+    .product-cards {
+      flex-direction: row;
+      align-items: center;
+      .product-card {
+        .sale {
+          font-size: calculateToRem(14);
+        }
+        .rating {
+          font-size: calculateToRem(15);
+        }
+        h4 {
+          font-size: calculateToRem(18);
+        }
+        .price {
+          font-size: calculateToRem(18);
+        }
+      }
+    }
+  }
+}

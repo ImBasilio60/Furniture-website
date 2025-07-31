@@ -1,0 +1,8 @@
+@use "../component/Banner/banner" as *;
+@use "../abstract/function" as *;
+.banner-section {
+  width: 100%;
+  @include Mobile();
+  margin-bottom: calculateToRem(114);
+}
+@include Desktop();

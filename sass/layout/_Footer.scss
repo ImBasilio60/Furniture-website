@@ -1,0 +1,8 @@
+@use "../abstract/function" as *;
+@use "../abstract/variable" as *;
+@use "../component/Footer/Footer" as *;
+footer {
+  padding: 0 calculateToRem(237);
+  @include Mobile();
+}
+@include Desktop();

@@ -1,0 +1,9 @@
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+@use "../Product/title" as *;
+@mixin Text() {
+  @include Title();
+  .product-title {
+    margin-bottom: calculateToRem(104);
+  }
+}

@@ -1,0 +1,9 @@
+@use "../component/Header/Nav" as *;
+@use "../abstract/function" as *;
+
+header {
+  width: 100%;
+  height: calculateToRem(82);
+  padding: 0 calculateToRem(237);
+  @include Nav();
+}

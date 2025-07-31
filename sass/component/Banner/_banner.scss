@@ -1,0 +1,46 @@
+@use "../../abstract/function" as *;
+@use "../../abstract/variable" as *;
+@mixin Mobile() {
+  article {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+    color: white;
+  }
+  article:last-child {
+    padding: calculateToRem(85) calculateToRem(205) calculateToRem(85)
+      calculateToRem(70);
+    background: $primary-color;
+    h1 {
+      margin-bottom: calculateToRem(53);
+      font-size: calculateToMobile(36);
+      font-family: Poppins-SemiBold, sans-serif;
+    }
+    p {
+      font-size: calculateToMobile(14);
+      font-family: poppins-regular, sans-serif;
+    }
+  }
+}
+@mixin Desktop() {
+  @media (min-width: 1024px) {
+    .banner-section {
+      display: flex;
+      flex-wrap: nowrap;
+      article {
+        width: 50%;
+        img {
+          height: 100%;
+        }
+        h1 {
+          font-size: calculateToRem(36) !important;
+          letter-spacing: calculateToRem(4);
+        }
+        p {
+          font-size: calculateToRem(18) !important;
+        }
+      }
+    }
+  }
+}

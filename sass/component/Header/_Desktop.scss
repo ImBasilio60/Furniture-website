@@ -1,0 +1,41 @@
+@use "../../abstract/variable" as *;
+@use "../../abstract/function" as *;
+
+@mixin Nav-desktop() {
+  @media (min-width: 1024px) {
+    .navbar {
+      font-size: calculateToRem(18);
+      .toggle-button {
+        display: none;
+      }
+      @include Nav-links();
+      @include Icons();
+    }
+  }
+}
+@mixin Nav-links() {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calculateToRem(40);
+    li {
+      a {
+        font-family: "Poppins-SemiBold", sans-serif;
+      }
+    }
+    li.active {
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+}
+@mixin Icons() {
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calculateToRem(38);
+  }
+}

@@ -1,0 +1,26 @@
+@use "../abstract/function" as *;
+@use "../component/Hero/Image" as *;
+@use "../component/Hero/Text" as *;
+section.hero {
+  width: 100%;
+  padding: calculateToRem(213) calculateToRem(0) calculateToRem(168)
+    calculateToRem(237);
+  background-color: #f9f3eb;
+  margin-bottom: calculateToRem(119);
+  /**/
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  /**/
+  @include Text();
+  @include Image();
+}
+@media (min-width: 1024px) {
+  section.hero {
+    $value: calculateToRem(82);
+    height: calc(100vh - $value);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
