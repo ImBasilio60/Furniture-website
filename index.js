@@ -32,5 +32,11 @@ $(document).ready(function () {
 
   $(window).on("resize", function () {
     initSlickIfNeeded();
+    const navLinks = document.querySelector("ul.nav-links");
+    if (navLinks.classList.contains("show")) {
+      const icon = $("#toggle");
+      icon.toggleClass("fa-bars fa-xmark");
+      navLinks.classList.remove("show");
+    }
   });
 });
